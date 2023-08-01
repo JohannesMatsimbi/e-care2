@@ -1,8 +1,8 @@
 import { authOptions } from "app/api/auth/[...nextauth]/route.js";
 import { getServerSession } from "next-auth";
-import "./globals.css";
+import "./page.css";
 import { Inter } from "next/font/google";
-import SessionProvider from "./auth/Backend/SessionProvider";
+import SessionProvider from "../../auth/Backend/SessionProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,11 +13,5 @@ export const metadata = {
 
 export default async function RootLayout({ children }) {
   const session = await getServerSession(authOptions);
-  return (
-    <html lang="en">
-      <body className={inter.className}>
-        <SessionProvider session={session}>{children}</SessionProvider>
-      </body>
-    </html>
-  );
+  return <SessionProvider session={session}>{children}</SessionProvider>;
 }
