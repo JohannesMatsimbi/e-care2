@@ -7,12 +7,13 @@ import { getAuth } from "firebase/auth";
 // Your web app's Firebase configuration
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBrfRe_5lCUkDOQSjIkDNfGF3SqZzSUlew",
-  authDomain: "e-care-0.firebaseapp.com",
-  projectId: "e-care-0",
-  storageBucket: "e-care-0.appspot.com",
-  messagingSenderId: "983543880417",
-  appId: "1:983543880417:web:aeae17278a6b757f3075a0",
+  apiKey: "AIzaSyCgUi7bnfrIpjsg6bOzTrPln36TAUZwatI",
+  authDomain: "projectx-9.firebaseapp.com",
+  projectId: "projectx-9",
+  storageBucket: "projectx-9.appspot.com",
+  messagingSenderId: "250878981952",
+  appId: "1:250878981952:web:e1c534802f1ca0fcd9aca5",
+  measurementId: "G-LQSR7GQL7R",
 };
 
 // Initialize Firebase
