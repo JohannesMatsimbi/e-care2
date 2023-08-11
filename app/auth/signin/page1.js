@@ -1,18 +1,14 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { signIn, useSession } from "next-auth/react";
+import { signIn } from "next-auth/react";
 import Link from "next/link";
-import { redirect } from "next/navigation";
 import { useRouter } from "next/navigation"; //what it needs to be
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 export default function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const router = useRouter();
-  const notify = () => toast("success!");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,7 +17,7 @@ export default function SignIn() {
       password,
       redirect: false,
       callbackUrl: "/",
-    }).then(notify());
+    });
 
     if (result.error) {
       showError("Invalid credentials");

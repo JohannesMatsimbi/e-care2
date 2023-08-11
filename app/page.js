@@ -1,23 +1,15 @@
-"use client";
-import { signOut, useSession } from "next-auth/react";
-import { redirect } from "next/navigation";
-import { collection, query } from "firebase/firestore";
-import { useCollection } from "react-firebase-hooks/firestore";
-import { auth, db } from "./firebase";
-import { sendPasswordResetEmail } from "firebase/auth";
-import { doc, getDoc } from "firebase/firestore";
+import { redirect, useRouter } from "next/navigation";
+import { getUser } from "./utils/utils";
+import { getServerSession } from "next-auth";
+import { authOptions } from "./api/auth/[...nextauth]/route";
 
-export default function Home() {
-  const session = useSession({
-    required: true,
-    onUnauthenticated() {
-      redirect("/unauthenticated");
-    },
-  });
+export default async function Home() {
+  const session = await getServerSession(authOptions);
+  const user = await getUser();
 
   return (
-    <div className="p-8">
-      <h1>what is ecare bluh bluh bluh we take care of u</h1>
+    <div className="">
+      <h1>home {user?.firstName} </h1>
     </div>
   );
 }

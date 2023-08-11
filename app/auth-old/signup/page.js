@@ -205,6 +205,75 @@ export default function Signup() {
               Passwords must match
             </p>
           </div>
+          <div className="mt-10">
+            <div className="mb-2">
+              <label
+                htmlFor="password"
+                className="block text-sm font-semibold text-gray-800"
+              >
+                Date of birth
+              </label>
+              <input
+                type="date"
+                value={dateOfBirth}
+                required
+                autoComplete="off"
+                onChange={(e) => setDateOfBirth(e.target.value)}
+                className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40"
+              />
+            </div>
+
+            <div className="mb-2">
+              <label
+                htmlFor="password"
+                className="block text-sm font-semibold text-gray-800"
+              >
+                ID Number
+              </label>
+              <input
+                type="number"
+                value={idNumber}
+                required
+                autoComplete="off"
+                onChange={(e) => setIdNumber(e.target.value)}
+                className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40"
+              />
+            </div>
+            <div className="mb-2 flex flex-col">
+              <label
+                htmlFor="gender"
+                className="block text-sm font-semibold text-gray-800"
+              >
+                Gender
+              </label>
+              <div>
+                <input
+                  label="Male"
+                  type="radio"
+                  value="Male"
+                  onClick={() => setGender("Male")}
+                />
+                <span> Male</span>
+              </div>
+              <div>
+                <input
+                  label="Male"
+                  type="radio"
+                  value="Male"
+                  onClick={() => setGender("Female")}
+                />
+                <span> Female</span>
+              </div>
+
+              <input
+                type="radio"
+                value={gender}
+                onChange={(e) => setGender(e.target.value)}
+                required
+                className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40"
+              />
+            </div>
+          </div>
 
           <div className="mt-6">
             <button

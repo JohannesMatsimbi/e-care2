@@ -55,7 +55,8 @@ export default function RecoverAccount() {
           <div className="mt-2">
             <button
               onSubmit={handleSubmit}
-              className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600"
+              disabled={!email}
+              className="disabled:opacity-40 w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600"
             >
               send Email Verification
             </button>
